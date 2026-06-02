@@ -1,0 +1,16 @@
+{
+  "network": "base",
+  "chainId": "8453",
+  "deployer": "0x4DA175C235f4251A88d84C46ba330a33889f8508",
+  "deployedAt": "2026-06-02T11:30:00.000Z",
+  "levels": 20,
+  "hasher": "0x0515b6E0407D78F7E49bd3D2f408c0efA6BCC3dd",
+  "verifier": "0x1C0E08B443f383da890CFB0f67836C974b02E969",
+  "pools": {
+    "zk-0.001-eth": { "address": "0x676aCaBB6B599D7F699B8058b675816be346d24D", "label": "0.001 ETH", "amount": "0.001" },
+    "zk-0.005-eth": { "address": "0xB93000D0eb8559C2202Ca047FF1c7d5A8e569ed0", "label": "0.005 ETH", "amount": "0.005" },
+    "zk-0.01-eth": { "address": "0x8F7927de1461e822D396bfC551244B5fd13304d5", "label": "0.01 ETH", "amount": "0.01" },
+    "zk-0.1-eth": { "address": "0x749621fbD86250c103F2219Acea4F5FbF4241eA0", "label": "0.1 ETH", "amount": "0.1" },
+    "zk-1-eth": { "address": "0xE9b3F084a46219d75534015b4b0950220b373C82", "label": "1.0 ETH", "amount": "1.0" }
+  }
+}
