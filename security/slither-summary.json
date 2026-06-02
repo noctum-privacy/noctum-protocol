@@ -1,0 +1,607 @@
+{
+  "tool": "Slither by Trail of Bits",
+  "version": "0.10.x",
+  "scope": "12 contracts, 101 detectors",
+  "total_findings": 99,
+  "by_impact": {
+    "High": 5,
+    "Low": 6,
+    "Informational": 88
+  },
+  "findings": [
+    {
+      "impact": "High",
+      "confidence": "Medium",
+      "check": "arbitrary-send-eth",
+      "description": "ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address) (contracts/ZkNoctumPool.sol#139-167) sends eth to arbitrary user\n\tDangerous calls:\n\t- (ok,None) = _recipient.call{val"
+    },
+    {
+      "impact": "High",
+      "confidence": "Medium",
+      "check": "arbitrary-send-eth",
+      "description": "NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32) (contracts/NoctumPool.sol#202-241) sends eth to arbitrary user\n\tDangerous calls:\n\t- (ok,None) = _recipient.call{value: payout}() (con"
+    },
+    {
+      "impact": "High",
+      "confidence": "Medium",
+      "check": "incorrect-return",
+      "description": "Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3]) (contracts/Groth16Verifier.sol#65-181) calls Groth16Verifier.verifyProof.asm_0.checkField() (contracts/Groth16Verifier.sol#6"
+    },
+    {
+      "impact": "High",
+      "confidence": "Medium",
+      "check": "incorrect-return",
+      "description": "Groth16Verifier.verifyProof.asm_0.checkPairing() (contracts/Groth16Verifier.sol#100-161) calls Groth16Verifier.verifyProof.asm_0.g1_mulAccC() (contracts/Groth16Verifier.sol#75-98) which halt the execu"
+    },
+    {
+      "impact": "High",
+      "confidence": "Medium",
+      "check": "incorrect-return",
+      "description": "Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3]) (contracts/Groth16Verifier.sol#65-181) calls Groth16Verifier.verifyProof.asm_0.checkPairing() (contracts/Groth16Verifier.sol"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "missing-zero-check",
+      "description": "NoctumPool.constructor(address,uint256,uint32,address)._operator (contracts/NoctumPool.sol#170) lacks a zero-check on :\n\t\t- operator = _operator (contracts/NoctumPool.sol#175)\n"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "missing-zero-check",
+      "description": "NoctumPoolFactory.constructor(address)._operator (contracts/NoctumPoolFactory.sol#62) lacks a zero-check on :\n\t\t- operator = _operator (contracts/NoctumPoolFactory.sol#63)\n"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "calls-loop",
+      "description": "PoseidonMerkleTreeWithHistory._hashLeftRight(IPoseidonHasher,uint256,uint256) (contracts/PoseidonMerkleTreeWithHistory.sol#93-99) has external calls inside a loop: _hasher.poseidon((_left,_right)) (co"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "calls-loop",
+      "description": "PoseidonMerkleTreeWithHistory._hashLeftRight(IPoseidonHasher,uint256,uint256) (contracts/PoseidonMerkleTreeWithHistory.sol#93-99) has external calls inside a loop: _hasher.poseidon((_left,_right)) (co"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "calls-loop",
+      "description": "PoseidonMerkleTreeWithHistory._hashLeftRight(IPoseidonHasher,uint256,uint256) (contracts/PoseidonMerkleTreeWithHistory.sol#93-99) has external calls inside a loop: _hasher.poseidon((_left,_right)) (co"
+    },
+    {
+      "impact": "Low",
+      "confidence": "Medium",
+      "check": "timestamp",
+      "description": "NoctumPool.executeVerifierUpdate() (contracts/NoctumPool.sol#284-293) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp < pendingVerifierTimestamp (contracts/NoctumPool.sol#286"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getAddressSlot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#66-70) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#67-69)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getUint256Slot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#93-97) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#94-96)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3]) (contracts/Groth16Verifier.sol#65-181) uses assembly\n\t- INLINE ASM (contracts/Groth16Verifier.sol#66-180)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getBooleanSlot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#75-79) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#76-78)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "Groth16Verifier.verifyProof.asm_0.checkField() (contracts/Groth16Verifier.sol#67-72) uses assembly\n\t- INLINE ASM (contracts/Groth16Verifier.sol#67-72)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getBytes32Slot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#84-88) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#85-87)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getInt256Slot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#102-106) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#103-105)"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "Groth16Verifier.verifyProof.asm_0.checkPairing() (contracts/Groth16Verifier.sol#100-161) uses assembly\n\t- INLINE ASM (contracts/Groth16Verifier.sol#100-161)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getBytesSlot(bytes) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#138-142) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#139-141)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getStringSlot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#111-115) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#112-114)"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getStringSlot(string) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#120-124) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#121-123)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "Groth16Verifier.verifyProof.asm_0.g1_mulAccC() (contracts/Groth16Verifier.sol#75-98) uses assembly\n\t- INLINE ASM (contracts/Groth16Verifier.sol#75-98)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "assembly",
+      "description": "StorageSlot.getBytesSlot(bytes32) (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#129-133) uses assembly\n\t- INLINE ASM (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#130-132)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "pragma",
+      "description": "3 different versions of Solidity are used:\n\t- Version constraint ^0.8.20 is used by:\n\t\t-^0.8.20 (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#4)\n\t\t-^0.8.20 (node_modules/@openzeppeli"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "solc-version",
+      "description": "Version constraint ^0.8.20 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- VerbatimInvalidDeduplication\n\t- FullInlinerNonExpressionSplitArgumentEvaluationOrder\n\t-"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "solc-version",
+      "description": "Version constraint >=0.7.0<0.9.0 is too complex.\nIt is used by:\n\t- >=0.7.0<0.9.0 (contracts/Groth16Verifier.sol#21)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "low-level-calls",
+      "description": "Low level call in NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32) (contracts/NoctumPool.sol#202-241):\n\t- (ok,None) = _recipient.call{value: payout}() (contracts/NoctumPool.sol#232)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "low-level-calls",
+      "description": "Low level call in ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address) (contracts/ZkNoctumPool.sol#139-167):\n\t- (ok,None) = _recipient.call{value: denomination}() (contra"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "missing-inheritance",
+      "description": "Groth16Verifier (contracts/Groth16Verifier.sol#23-182) should inherit from IGroth16Verifier (contracts/ZkNoctumPool.sol#12-19)\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.setFeeBps(uint256)._feeBps (contracts/NoctumPool.sol#299) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkPairing().pB_verifyProof_asm_0_checkPairing (contracts/Groth16Verifier.sol#100) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._recipient (contracts/NoctumPool.sol#205) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter MerkleTreeWithHistory.isKnownRoot(bytes32)._root (contracts/MerkleTreeWithHistory.sol#110) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.scheduleVerifierUpdate(address)._newVerifier (contracts/NoctumPool.sol#276) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.isCommitmentKnown(bytes32)._commitment (contracts/NoctumPool.sol#255) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.alphay (contracts/Groth16Verifier.sol#31) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC0x (contracts/Groth16Verifier.sol#46) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.betax1 (contracts/Groth16Verifier.sol#32) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.gammay1 (contracts/Groth16Verifier.sol#38) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.deltay1 (contracts/Groth16Verifier.sol#42) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.gammay2 (contracts/Groth16Verifier.sol#39) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC2y (contracts/Groth16Verifier.sol#53) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.pLastMem (contracts/Groth16Verifier.sol#63) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.pPairing (contracts/Groth16Verifier.sol#61) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._recipient (contracts/ZkNoctumPool.sol#145) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC0y (contracts/Groth16Verifier.sol#47) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkPairing().pA_verifyProof_asm_0_checkPairing (contracts/Groth16Verifier.sol#100) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC3x (contracts/Groth16Verifier.sol#55) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkField().v_verifyProof_asm_0_checkField (contracts/Groth16Verifier.sol#67) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkPairing().pubSignals_verifyProof_asm_0_checkPairing (contracts/Groth16Verifier.sol#100) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter MerkleTreeWithHistory.hashLeftRight(bytes32,bytes32)._right (contracts/MerkleTreeWithHistory.sol#69) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.isSpent(bytes32)._nullifierHash (contracts/NoctumPool.sol#248) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPoolFactory.createPool(uint256,string)._denomination (contracts/NoctumPoolFactory.sol#74) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.deltax2 (contracts/Groth16Verifier.sol#41) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._pA (contracts/ZkNoctumPool.sol#140) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC1x (contracts/Groth16Verifier.sol#49) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._nullifierHash (contracts/NoctumPool.sol#204) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.deposit(bytes32)._commitment (contracts/NoctumPool.sol#182) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._nullifierHash (contracts/ZkNoctumPool.sol#144) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPoolFactory.getPool(uint256)._denomination (contracts/NoctumPoolFactory.sol#105) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC2x (contracts/Groth16Verifier.sol#52) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.deltay2 (contracts/Groth16Verifier.sol#43) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3])._pA (contracts/Groth16Verifier.sol#65) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.r (contracts/Groth16Verifier.sol#25) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkPairing().pMem_verifyProof_asm_0_checkPairing (contracts/Groth16Verifier.sol#100) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.betax2 (contracts/Groth16Verifier.sol#33) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.gammax1 (contracts/Groth16Verifier.sol#36) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._pB (contracts/ZkNoctumPool.sol#141) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._fee (contracts/NoctumPool.sol#207) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._root (contracts/ZkNoctumPool.sol#143) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._relayer (contracts/NoctumPool.sol#206) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC3y (contracts/Groth16Verifier.sol#56) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._root (contracts/NoctumPool.sol#208) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3])._pB (contracts/Groth16Verifier.sol#65) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3])._pC (contracts/Groth16Verifier.sol#65) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.pVk (contracts/Groth16Verifier.sol#60) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Function Groth16Verifier.verifyProof.asm_0.g1_mulAccC() (contracts/Groth16Verifier.sol#75-98) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPoolFactory.createPool(uint256,string)._label (contracts/NoctumPoolFactory.sol#75) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter NoctumPool.withdraw(bytes,bytes32,address,address,uint256,bytes32)._proof (contracts/NoctumPool.sol#203) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.isCommitmentKnown(uint256)._commitment (contracts/ZkNoctumPool.sol#181) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter PoseidonMerkleTreeWithHistory.isKnownRoot(uint256)._root (contracts/PoseidonMerkleTreeWithHistory.sol#138) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter MerkleTreeWithHistory.hashLeftRight(bytes32,bytes32)._left (contracts/MerkleTreeWithHistory.sol#69) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.deposit(uint256)._commitment (contracts/ZkNoctumPool.sol#119) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.g1_mulAccC().x_verifyProof_asm_0_g1_mulAccC (contracts/Groth16Verifier.sol#75) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.withdraw(uint256[2],uint256[2][2],uint256[2],uint256,uint256,address)._pC (contracts/ZkNoctumPool.sol#142) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.g1_mulAccC().y_verifyProof_asm_0_g1_mulAccC (contracts/Groth16Verifier.sol#75) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.deltax1 (contracts/Groth16Verifier.sol#40) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.g1_mulAccC().pR_verifyProof_asm_0_g1_mulAccC (contracts/Groth16Verifier.sol#75) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter ZkNoctumPool.isSpent(uint256)._nullifierHash (contracts/ZkNoctumPool.sol#174) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.g1_mulAccC().s_verifyProof_asm_0_g1_mulAccC (contracts/Groth16Verifier.sol#75) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.gammax2 (contracts/Groth16Verifier.sol#37) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.betay2 (contracts/Groth16Verifier.sol#35) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.IC1y (contracts/Groth16Verifier.sol#50) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.q (contracts/Groth16Verifier.sol#27) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof(uint256[2],uint256[2][2],uint256[2],uint256[3])._pubSignals (contracts/Groth16Verifier.sol#65) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Parameter Groth16Verifier.verifyProof.asm_0.checkPairing().pC_verifyProof_asm_0_checkPairing (contracts/Groth16Verifier.sol#100) is not in mixedCase\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.alphax (contracts/Groth16Verifier.sol#30) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    },
+    {
+      "impact": "Informational",
+      "confidence": "High",
+      "check": "naming-convention",
+      "description": "Constant Groth16Verifier.betay1 (contracts/Groth16Verifier.sol#34) is not in UPPER_CASE_WITH_UNDERSCORES\n"
+    }
+  ]
+}
