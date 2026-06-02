@@ -1,0 +1,11 @@
+node_modules/
+artifacts-hardhat/
+cache/
+dist/
+build/
+.env
+.env.*
+*.tsbuildinfo
+typechain-types/
+coverage/
+coverage.json

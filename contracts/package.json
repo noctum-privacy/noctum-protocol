@@ -1,0 +1,26 @@
+{
+  "name": "@workspace/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network base",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network base-sepolia",
+    "note": "ts-node scripts/generateNote.ts",
+    "audit:sol": "solhint 'contracts/**/*.sol' --config .solhint.json",
+    "audit:sol:fix": "solhint 'contracts/**/*.sol' --config .solhint.json --fix"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.3.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.22.0",
+    "solhint": "^6.2.1",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.9.0"
+  }
+}

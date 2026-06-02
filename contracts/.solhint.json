@@ -1,0 +1,23 @@
+{
+  "extends": "solhint:recommended",
+  "rules": {
+    "compiler-version": ["error", "^0.8.24"],
+    "avoid-call-value": "warn",
+    "avoid-low-level-calls": "warn",
+    "avoid-tx-origin": "error",
+    "check-send-result": "warn",
+    "func-visibility": ["error", { "ignoreConstructors": true }],
+    "mark-callable-contracts": "off",
+    "multiple-sends": "error",
+    "no-complex-fallback": "error",
+    "no-inline-assembly": "warn",
+    "reentrancy": "error",
+    "state-visibility": "error",
+    "reason-string": ["warn", { "maxLength": 64 }],
+    "no-empty-blocks": "warn",
+    "no-unused-vars": "warn",
+    "ordering": "warn",
+    "named-parameters-mapping": "warn",
+    "no-global-import": "warn"
+  }
+}
